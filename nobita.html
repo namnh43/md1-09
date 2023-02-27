@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Sự kiện bàn phím</title>
+</head>
+<body onload="doReady()">
+<img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+</body>
+<script>
+    function moveUp() {
+        let element = document.getElementById('nobita');
+        element.style.top = parseInt(element.style.top) - 5 + 'px'
+    }
+    function moveDown() {
+        let element = document.getElementById('nobita');
+        element.style.top = parseInt(element.style.top) + 5 + 'px'
+    }
+    function moveRight() {
+        let element = document.getElementById('nobita');
+        element.style.left = parseInt(element.style.left) + 5 + 'px'
+    }
+    function moveLeft() {
+        let element = document.getElementById('nobita');
+        element.style.left = parseInt(element.style.left) - 5 + 'px'
+    }
+    function moveHandler(event) {
+        console.log(event.which)
+        switch (event.keyCode) {
+            case 37://left arrow
+                moveLeft();
+                break;
+            case 39://right arrow
+                moveRight();
+                break;
+            case 38://up arrow
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+        }
+    }
+    function doReady() {
+        window.addEventListener("keydown", moveHandler)
+    }
+</script>
+</html>
