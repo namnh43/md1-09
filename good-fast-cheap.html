@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Ứng dụng good-fast-cheap</title>
+  <style>
+    .content {
+      background-color: #e0e0e0;
+      width: 500px;
+      height: 500px;
+    }
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .toggle_checkbox {
+        display: none;
+    }
+
+    label {
+        position: absolute;
+        /*top: 50%;*/
+        top: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        width: 140px;
+        height: 70px;
+        /*margin: 0 auto;*/
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    label:before {
+        top: 8px;
+        left: 8px;
+        width: 54px;
+        height: 54px;
+        border: 3px solid red;
+    }
+
+    label:after {
+        top: 0;
+        right: 0;
+        width: 140px;
+        height: 70px;
+        border: 3px solid #143240;
+    }
+
+    label:before,
+    label:after {
+        content: "";
+        position: absolute;
+        border-radius: 50px;
+        box-sizing: border-box;
+        transition: 0.5s ease top, 0.5s ease left, 0.5s ease right, 0.5s ease width,
+        0.5s ease height, 0.5s ease border-color;
+    }
+
+    .toggle_checkbox:checked + label:before {
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 70px;
+        border-color: #143240;
+    }
+
+    .toggle_checkbox:checked + label:after {
+        top: 8px;
+        right: 8px;
+        width: 54px;
+        height: 54px;
+        border-color: red;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+    .item_template {
+        margin-top: 60px;
+        margin-left: 20px;
+        padding: 20px;
+        position: relative;
+    }
+    .grid-item {
+        /*border: black solid 1px;*/
+    }
+    .text {
+        margin-top: 30px;
+        font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+<h1>[*Bài tập] Ứng dụng good-fast-cheap</h1>
+<div class="content">
+    <div class="grid-container">
+        <div class="item_template grid-item">
+            <input type="checkbox" class="toggle_checkbox" id="toggle_checkbox1" onclick="get_value(1)">
+            <label for="toggle_checkbox1"></label>
+        </div>
+        <span class="grid-item text">Good</span>
+        <div class="item_template grid-item">
+            <input type="checkbox" class="toggle_checkbox" id="toggle_checkbox2" onclick="get_value(2)">
+            <label for="toggle_checkbox2"></label>
+        </div>
+        <span class="grid-item text">Cheap</span>
+        <div class="item_template grid-item">
+            <input type="checkbox" class="toggle_checkbox" id="toggle_checkbox3" onclick="get_value(3)">
+            <label for="toggle_checkbox3"></label>
+        </div>
+        <span class="grid-item text">Fast</span>
+    </div>
+</div>
+</body>
+<script>
+    function get_value(val) {
+        let dom_check1 = document.getElementById("toggle_checkbox1");
+        let dom_check2 = document.getElementById("toggle_checkbox2");
+        let dom_check3 = document.getElementById("toggle_checkbox3");
+        console.log(val)
+        if (dom_check1.checked && dom_check2.checked && dom_check3.checked) {
+            if (val == 1) { // on 1 - off3
+                document.getElementById("toggle_checkbox3").checked = false;
+            } else if (val == 2) { //on 2 - off 1
+                document.getElementById("toggle_checkbox1").checked = false;
+            } else {
+                document.getElementById("toggle_checkbox2").checked = false;
+            }
+        }
+
+    }
+</script>
+</html>

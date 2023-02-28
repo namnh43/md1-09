@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Game puzzle</title>
+    <style>
+        body {
+            background-color: bisque;
+        }
+        #grid-container {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            row-gap: 7px;
+        }
+        .grid-item {
+            width: 500px;
+            height: 180px;
+            border: white 5px solid;
+        }
+        .img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>[Bài tập] Game puzzle</h1>
+<div id="grid-container">
+    <div class="grid-item" id="head-item"><img class="img" src="img/head/img1-row-1-column-1.png" alt="img1"> </div>
+    <div class="grid-item" id="body-item"><img class="img" src="img/head/img1-row-1-column-1.png" alt="img1"> </div>
+    <div class="grid-item" id="foot-item"><img class="img" src="img/head/img1-row-1-column-1.png" alt="img1"> </div>
+    <input type="button" onclick="turnHead()" value="click">
+</div>
+</body>
+<script>
+    let headDom = document.getElementById("head-item");
+    let bodyDom = document.getElementById("body-item");
+    let footDom = document.getElementById("foot-item");
+    headDom.addEventListener("click",turnHead);
+    bodyDom.addEventListener("click", turnBody);
+    footDom.addEventListener("click", turnFoot);
+    function turnHead() {
+        return turnImg('1')
+    }
+    function turnBody() {
+        return turnImg('2')
+    }
+    function turnFoot() {
+        return turnImg('3')
+    }
+    function turnImg(val) {
+        console.log(val)
+        switch (val) {
+            case '1':
+
+                break;
+            case '2':
+                break;
+            case '3':
+                break;
+            default:
+                break;
+        }
+    }
+</script>
+</html>
