@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Máy tính đơn giản</title>
+    <style>
+        body {
+            width: 200px;
+            height: 200px;
+            border: solid black 2px;
+            padding: 10px;
+        }
+
+        #result-bar {
+            width: 100%;
+            text-align: right;
+            padding: 10px;
+            width: 160px;
+            margin-left: 10px;
+        }
+
+        .grid-container {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .grid-item {
+            /*border: 1px solid red;*/
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="result-bar" value="0">
+<div class="grid-container content">
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('1')">1</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('2')">2</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('3')">3</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('+')">+</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('4')">4</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('5')">5</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('6')">6</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('-')">-</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('7')">7</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('8')">8</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('9')">9</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('x')">x</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('c')">C</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('0')">0</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('=')">=</button>
+    </div>
+    <div class="grid-item">
+        <button style="width: 100%" onclick="button_click('/')">/</button>
+    </div>
+</div>
+
+</body>
+<script>
+    let result = 0;
+    let num1 = 0;
+    let num2 = 0;
+    let operatorClicked = false;
+
+    function button_click(input) {
+        let resultText = document.getElementById("result-bar");
+        switch (input) {
+            case '=':
+                result = eval(resultText.value)
+                console.log(resultText.value)
+                resultText.value = result
+                break;
+            case 'c':
+                resultText.value = 0;
+                break;
+
+            case 'x':
+                resultText.value += '*';
+                break;
+            case '+':
+            // break;
+            case '-':
+            // break;
+            case '/':
+            // break;
+            default:
+                if (resultText.value == '0')
+                    resultText.value = input;
+                else
+                    resultText.value += input;
+                break;
+        }
+    }
+</script>
+</html>
