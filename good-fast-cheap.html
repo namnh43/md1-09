@@ -17,7 +17,7 @@
         display: none;
     }
 
-    label {
+    .item_template label {
         position: absolute;
         /*top: 50%;*/
         top: 0;
@@ -31,7 +31,7 @@
         cursor: pointer;
     }
 
-    label:before {
+    .item_template label:before {
         top: 8px;
         left: 8px;
         width: 54px;
@@ -39,7 +39,7 @@
         border: 3px solid red;
     }
 
-    label:after {
+    .item_template label:after {
         top: 0;
         right: 0;
         width: 140px;
@@ -47,8 +47,8 @@
         border: 3px solid #143240;
     }
 
-    label:before,
-    label:after {
+    .item_template label:before,
+    .item_template label:after {
         content: "";
         position: absolute;
         border-radius: 50px;
@@ -100,17 +100,17 @@
             <input type="checkbox" class="toggle_checkbox" id="toggle_checkbox1" onclick="get_value(1)">
             <label for="toggle_checkbox1"></label>
         </div>
-        <span class="grid-item text">Good</span>
+        <span class="grid-item text"><label for="toggle_checkbox1">Good</label></span>
         <div class="item_template grid-item">
             <input type="checkbox" class="toggle_checkbox" id="toggle_checkbox2" onclick="get_value(2)">
             <label for="toggle_checkbox2"></label>
         </div>
-        <span class="grid-item text">Cheap</span>
+        <span class="grid-item text"><label for="toggle_checkbox2">Cheap</label></span>
         <div class="item_template grid-item">
             <input type="checkbox" class="toggle_checkbox" id="toggle_checkbox3" onclick="get_value(3)">
             <label for="toggle_checkbox3"></label>
         </div>
-        <span class="grid-item text">Fast</span>
+        <span class="grid-item text"><label for="toggle_checkbox3">Fast</label></span>
     </div>
 </div>
 </body>
